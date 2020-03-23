@@ -1,0 +1,52 @@
+body{
+    padding: 0;
+    margin: 0;
+    background: rgb(86,83,140);
+background: -moz-linear-gradient(90deg, rgba(86,83,140,1) 10%, rgba(67,67,219,1) 35%, rgba(0,212,255,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(86,83,140,1) 10%, rgba(67,67,219,1) 35%, rgba(0,212,255,1) 100%);
+background: linear-gradient(90deg, rgba(86,83,140,1) 10%, rgba(67,67,219,1) 35%, rgba(0,212,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#56538c",endColorstr="#00d4ff",GradientType=1);
+}
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 12px;
+    font-weight: 700;
+    font-family: 'Play', sans-serif;
+}
+
+
+
+
+
+video {
+    transform: rotateY(180deg); 
+}
+
+.select {
+    height: 30px;
+}
+
+.h-90 {
+    height: 90% !important;
+}
+
+.h-10 {
+    height: 10% !important;
+}
+
+#peerVideo:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.copy{
+    text-align: center;
+}
