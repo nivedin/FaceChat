@@ -3,7 +3,7 @@ const app = express()
 const https = require("https");
 const http = require('http').Server(app)
 const io = require('socket.io')(http)
-const request = require("request");
+// const request = require("request");
 const bodyParser = require("body-parser");
 const port = process.env.PORT || 8000
 // var favicon = require('favicon');
@@ -85,18 +85,14 @@ app.post("/failure",function(req,res){
 
 ///////////////////////////////////////
 
-
-
-
-
-
 io.on('connection', function (socket) {
     socket.on("NewClient", function () {
         if (clients < 2) {
             if (clients == 1) {
                 this.emit('CreatePeer')
             }
-        }else
+        }
+        else
             this.emit('SessionActive')
         clients++;
     })

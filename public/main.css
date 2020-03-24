@@ -1,13 +1,14 @@
-body{
+body {
     padding: 0;
     margin: 0;
-    background: rgb(86,83,140);
-background: -moz-linear-gradient(90deg, rgba(86,83,140,1) 10%, rgba(67,67,219,1) 35%, rgba(0,212,255,1) 100%);
-background: -webkit-linear-gradient(90deg, rgba(86,83,140,1) 10%, rgba(67,67,219,1) 35%, rgba(0,212,255,1) 100%);
-background: linear-gradient(90deg, rgba(86,83,140,1) 10%, rgba(67,67,219,1) 35%, rgba(0,212,255,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#56538c",endColorstr="#00d4ff",GradientType=1);
+    /* background: rgb(86, 83, 140);
+    background: -moz-linear-gradient(90deg, rgba(86, 83, 140, 1) 10%, rgba(67, 67, 219, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(86, 83, 140, 1) 10%, rgba(67, 67, 219, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    background: linear-gradient(90deg, rgba(86, 83, 140, 1) 10%, rgba(67, 67, 219, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#56538c", endColorstr="#00d4ff", GradientType=1); */
 }
-h1{
+
+h1 {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     text-transform: uppercase;
@@ -21,7 +22,7 @@ h1{
 
 
 video {
-    transform: rotateY(180deg); 
+    transform: rotateY(180deg);
 }
 
 .select {
@@ -47,6 +48,7 @@ video {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.copy{
+
+.copy {
     text-align: center;
 }

@@ -50,6 +50,7 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true })
             })
             client.peer = peer
         }
+
         //for peer of type not init
         function FrontAnswer(offer) {
             let peer = InitPeer('notInit')
@@ -59,13 +60,16 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true })
             peer.signal(offer)
             client.peer = peer
         }
+
         function SignalAnswer(answer) {
             client.gotAnswer = true
             let peer = client.peer
             peer.signal(answer)
         }
+
         function CreateVideo(stream) {
             CreateDiv()
+
             let video = document.createElement('video')
             video.id = 'peerVideo'
             video.srcObject = stream
@@ -74,21 +78,26 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true })
             video.play()
             //wait for 1 sec
             setTimeout(() => SendFilter(currentFilter), 1000)
+
             video.addEventListener('click', () => {
                 if (video.volume != 0)
                     video.volume = 0
                 else
                     video.volume = 1
             })
+
         }
+
         function SessionActive() {
             document.write('Session Active. Please come back later')
         }
+
         function SendFilter(filter) {
             if (client.peer) {
                 client.peer.send(filter)
             }
         }
+
         function RemovePeer() {
             document.getElementById("peerVideo").remove();
             document.getElementById("muteText").remove();
@@ -96,29 +105,33 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true })
                 client.peer.destroy()
             }
         }
+
         socket.on('BackOffer', FrontAnswer)
         socket.on('BackAnswer', SignalAnswer)
         socket.on('SessionActive', SessionActive)
         socket.on('CreatePeer', MakePeer)
         socket.on('Disconnect', RemovePeer)
+
     })
     .catch(err => document.write(err))
-// checkboxTheme.addEventListener('click', () => {
-//     if (checkboxTheme.checked == true) {
-//         document.body.style.backgroundColor = '#000'
-//         document.h1.style.backgroundColor = '#fff'
-//         if (document.querySelector('#muteText')) {
-//             document.querySelector('#muteText').style.color = "#000"
-//         }
-//     }
-//     else {
-//         document.body.style.backgroundColor = '#7fffd4'
-//         if (document.querySelector('#muteText')) {
-//             document.querySelector('#muteText').style.color = "#212529"
-//         }
-//     }
-// }
-// )
+
+checkboxTheme.addEventListener('click', () => {
+    if (checkboxTheme.checked == true) {
+        document.body.style.backgroundColor = '#212529'
+        if (document.querySelector('#muteText')) {
+            document.querySelector('#muteText').style.color = "#fff"
+        }
+
+    }
+    else {
+        document.body.style.backgroundColor = '#fff'
+        if (document.querySelector('#muteText')) {
+            document.querySelector('#muteText').style.color = "#212529"
+        }
+    }
+}
+)
+
 function CreateDiv() {
     let div = document.createElement('div')
     div.setAttribute('class', "centered")
