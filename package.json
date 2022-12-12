@@ -10,7 +10,7 @@
   "author": "Nivedin",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "favicon": "0.0.2",
     "request": "^2.88.2",
     "simple-peer": "^9.2.1",
